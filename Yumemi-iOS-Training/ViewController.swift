@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import YumemiWeather
 
 final class ViewController: UIViewController {
     @IBOutlet private weak var weatherImageView: UIImageView!
@@ -16,7 +15,7 @@ final class ViewController: UIViewController {
     }
 
     @IBAction private func reloadButtonPressed(_ sender: Any) {
-        switch YumemiWeather.fetchWeatherCondition() {
+        switch APIClient.fetchWeatherCondition() {
         case "sunny":
             weatherImageView.image = UIImage(named: "sunny")?.withRenderingMode(.alwaysTemplate)
             weatherImageView.tintColor = .red
