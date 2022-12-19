@@ -27,7 +27,8 @@ final class ViewController: UIViewController {
             weatherImageView.image = UIImage(named: "cloudy")?.withRenderingMode(.alwaysTemplate)
             weatherImageView.tintColor = .gray
         default:
-            weatherImageView.image = UIImage(systemName: "questionmark.circle")
+            weatherImageView.image = UIImage(systemName: "questionmark.circle")?.withRenderingMode(.alwaysTemplate)
+            weatherImageView.tintColor = .black
         }
     }
 }
