@@ -8,14 +8,28 @@
 import UIKit
 
 final class WeatherViewController: UIViewController {
+    private let weatherManager = WeatherManager()
+    private var displayedWetherCondition: String = ""
+
     @IBOutlet private weak var weatherImageView: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        weatherManager.delegate = self
     }
 
     @IBAction private func reloadButtonPressed(_ sender: Any) {
-        switch APIClient.fetchWeatherCondition() {
+        weatherManager.requestWeatherForecast(displayedWetherCondition)
+    }
+
+    @IBAction private func closeButtonPressed(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
+}
+
+extension WeatherViewController: WeatherDelegate {
+    func updateWeather(_ fetchedWetherCondition: String) {
+        switch fetchedWetherCondition {
         case "sunny":
             weatherImageView.image = UIImage(named: "sunny")?.withRenderingMode(.alwaysTemplate)
             weatherImageView.tintColor = .red
@@ -29,10 +43,6 @@ final class WeatherViewController: UIViewController {
             weatherImageView.image = UIImage(systemName: "questionmark.circle")?.withRenderingMode(.alwaysTemplate)
             weatherImageView.tintColor = .black
         }
-    }
-
-    @IBAction private func closeButtonPressed(_ sender: Any) {
-        self.dismiss(animated: true)
+        displayedWetherCondition = fetchedWetherCondition
     }
 }
-
