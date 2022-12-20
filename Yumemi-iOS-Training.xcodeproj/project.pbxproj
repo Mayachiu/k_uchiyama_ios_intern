@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D210EC3B295190310056CFDE /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D210EC3A295190310056CFDE /* APIClient.swift */; };
 		D28E358A294FF651000E3452 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E3589294FF651000E3452 /* AppDelegate.swift */; };
 		D28E358C294FF651000E3452 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E358B294FF651000E3452 /* SceneDelegate.swift */; };
 		D28E358E294FF651000E3452 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E358D294FF651000E3452 /* WeatherViewController.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D210EC3A295190310056CFDE /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		D28E3586294FF651000E3452 /* Yumemi-iOS-Training.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yumemi-iOS-Training.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D28E3589294FF651000E3452 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D28E358B294FF651000E3452 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			children = (
 				D28E3589294FF651000E3452 /* AppDelegate.swift */,
 				D28E358B294FF651000E3452 /* SceneDelegate.swift */,
+				D210EC3A295190310056CFDE /* APIClient.swift */,
 				D28E358D294FF651000E3452 /* WeatherViewController.swift */,
 				D2988639295070A000B01D38 /* WeatherViewController.xib */,
 				D298863729506A0D00B01D38 /* NewViewController.swift */,
@@ -276,6 +279,7 @@
 				D28E358E294FF651000E3452 /* WeatherViewController.swift in Sources */,
 				D28E358A294FF651000E3452 /* AppDelegate.swift in Sources */,
 				D28E358C294FF651000E3452 /* SceneDelegate.swift in Sources */,
+				D210EC3B295190310056CFDE /* APIClient.swift in Sources */,
 				D298863829506A0D00B01D38 /* NewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
