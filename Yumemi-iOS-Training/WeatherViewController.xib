@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WeatherViewController" customModule="Yumemi_iOS_Training" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="iN0-l3-epB" id="j0o-s1-fht"/>
+                <outlet property="weatherImageView" destination="nvJ-85-t7L" id="Y8o-nc-hYc"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvJ-GE-qQT">
+                    <rect key="frame" x="98.333333333333343" y="524.33333333333337" width="98.333333333333343" height="21"/>
+                    <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" name="Blue"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="toX-aZ-7Mh">
+                    <rect key="frame" x="196.66666666666666" y="524.33333333333337" width="97.999999999999972" height="21"/>
+                    <color key="backgroundColor" name="Gray"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" name="Red"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XRE-S3-0gr">
+                    <rect key="frame" x="207" y="625.33333333333337" width="77" height="35"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Reload"/>
+                    <connections>
+                        <action selector="reloadButtonPressed:" destination="-1" eventType="touchUpInside" id="Jih-sn-zUy"/>
+                    </connections>
+                </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nvJ-85-t7L">
+                    <rect key="frame" x="98.333333333333329" y="327.66666666666669" width="196.33333333333337" height="196.66666666666669"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="nvJ-85-t7L" secondAttribute="height" multiplier="1:1" id="iqo-JW-ttB"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N2V-ur-bfH">
+                    <rect key="frame" x="114" y="625.33333333333337" width="67" height="35"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Close"/>
+                    <connections>
+                        <action selector="closeButtonPressed:" destination="-1" eventType="touchUpInside" id="9Wk-6A-tqY"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="N2V-ur-bfH" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" multiplier="0.75" id="2AJ-gG-aV8"/>
+                <constraint firstItem="XRE-S3-0gr" firstAttribute="top" secondItem="toX-aZ-7Mh" secondAttribute="bottom" constant="80" id="60Z-RB-3i0"/>
+                <constraint firstItem="dvJ-GE-qQT" firstAttribute="width" secondItem="nvJ-85-t7L" secondAttribute="width" multiplier="0.5" id="E8r-mY-lva"/>
+                <constraint firstItem="N2V-ur-bfH" firstAttribute="top" secondItem="dvJ-GE-qQT" secondAttribute="bottom" constant="80" id="GMQ-Ae-F24"/>
+                <constraint firstItem="nvJ-85-t7L" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.5" id="KjY-r9-dSg"/>
+                <constraint firstItem="nvJ-85-t7L" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Q2G-KT-q3h"/>
+                <constraint firstItem="toX-aZ-7Mh" firstAttribute="top" secondItem="nvJ-85-t7L" secondAttribute="bottom" id="k4O-5S-wMH"/>
+                <constraint firstItem="XRE-S3-0gr" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" multiplier="1.25" id="nwe-Cc-clN"/>
+                <constraint firstItem="nvJ-85-t7L" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="oUc-o5-Bjg"/>
+                <constraint firstItem="toX-aZ-7Mh" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" multiplier="1.25" id="oXU-OS-EvJ"/>
+                <constraint firstItem="toX-aZ-7Mh" firstAttribute="width" secondItem="nvJ-85-t7L" secondAttribute="width" multiplier="0.5" id="oqA-SA-bSU"/>
+                <constraint firstItem="dvJ-GE-qQT" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" multiplier="0.75" id="t50-Ls-bpS"/>
+                <constraint firstItem="dvJ-GE-qQT" firstAttribute="top" secondItem="nvJ-85-t7L" secondAttribute="bottom" id="zUS-wd-sSf"/>
+            </constraints>
+            <point key="canvasLocation" x="-77" y="-12"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="Blue">
+            <color red="0.20499999821186066" green="0.53700000047683716" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Gray">
+            <color red="0.47900000214576721" green="0.48800000548362732" blue="0.52100002765655518" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Red">
+            <color red="1" green="0.210999995470047" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
