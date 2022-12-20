@@ -17,6 +17,7 @@
 		D28E35AB294FF652000E3452 /* Yumemi_iOS_TrainingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E35AA294FF652000E3452 /* Yumemi_iOS_TrainingUITests.swift */; };
 		D28E35AD294FF652000E3452 /* Yumemi_iOS_TrainingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E35AC294FF652000E3452 /* Yumemi_iOS_TrainingUITestsLaunchTests.swift */; };
 		D28E35BB294FFA85000E3452 /* YumemiWeather in Frameworks */ = {isa = PBXBuildFile; productRef = D28E35BA294FFA85000E3452 /* YumemiWeather */; };
+		D298863629505CE700B01D38 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D298863529505CE700B01D38 /* APIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		D28E35A6294FF652000E3452 /* Yumemi-iOS-TrainingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Yumemi-iOS-TrainingUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D28E35AA294FF652000E3452 /* Yumemi_iOS_TrainingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yumemi_iOS_TrainingUITests.swift; sourceTree = "<group>"; };
 		D28E35AC294FF652000E3452 /* Yumemi_iOS_TrainingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yumemi_iOS_TrainingUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D298863529505CE700B01D38 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				D28E3589294FF651000E3452 /* AppDelegate.swift */,
 				D28E358B294FF651000E3452 /* SceneDelegate.swift */,
 				D28E358D294FF651000E3452 /* ViewController.swift */,
+				D298863529505CE700B01D38 /* APIClient.swift */,
 				D28E358F294FF651000E3452 /* Main.storyboard */,
 				D28E3592294FF652000E3452 /* Assets.xcassets */,
 				D28E3594294FF652000E3452 /* LaunchScreen.storyboard */,
@@ -269,6 +272,7 @@
 				D28E358E294FF651000E3452 /* ViewController.swift in Sources */,
 				D28E358A294FF651000E3452 /* AppDelegate.swift in Sources */,
 				D28E358C294FF651000E3452 /* SceneDelegate.swift in Sources */,
+				D298863629505CE700B01D38 /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

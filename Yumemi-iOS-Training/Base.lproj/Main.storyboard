@@ -19,7 +19,6 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NmF-sB-f3t">
                                 <rect key="frame" x="98.333333333333329" y="327.66666666666669" width="196.33333333333337" height="196.66666666666669"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="NmF-sB-f3t" secondAttribute="height" multiplier="1:1" id="Hg0-ZJ-YNK"/>
                                 </constraints>
@@ -47,6 +46,9 @@
                                 <rect key="frame" x="207" y="625.33333333333337" width="77" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Reload"/>
+                                <connections>
+                                    <action selector="reloadButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TEf-pz-jxa"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -67,6 +69,9 @@
                             <constraint firstItem="3IX-OZ-gAh" firstAttribute="top" secondItem="RUm-pE-hml" secondAttribute="bottom" constant="80" id="pXL-Ob-Ccc"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="weatherImageView" destination="NmF-sB-f3t" id="F5v-lE-3JK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
