@@ -13,6 +13,10 @@ final class WeatherViewController: UIViewController {
 
     @IBOutlet private weak var weatherImageView: UIImageView!
 
+    deinit {
+            print("class：\(String(describing: type(of: self)))")
+        }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         weatherManager.delegate = self
