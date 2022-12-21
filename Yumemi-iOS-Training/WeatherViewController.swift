@@ -34,13 +34,13 @@ extension WeatherViewController: WeatherDelegate {
     func updateWeather(_ fetchedWeatherCondition: String) {
         switch fetchedWeatherCondition {
         case "sunny":
-            weatherImageView.image = UIImage(named: "sunny")?.withRenderingMode(.alwaysTemplate)
+            weatherImageView.image = #imageLiteral(resourceName: "sunny").withRenderingMode(.alwaysTemplate)
             weatherImageView.tintColor = .red
         case "rainy":
-            weatherImageView.image = UIImage(named: "rainy")?.withRenderingMode(.alwaysTemplate)
+                        weatherImageView.image = #imageLiteral(resourceName: "rainy").withRenderingMode(.alwaysTemplate)
             weatherImageView.tintColor = .blue
         case "cloudy":
-            weatherImageView.image = UIImage(named: "cloudy")?.withRenderingMode(.alwaysTemplate)
+                        weatherImageView.image = #imageLiteral(resourceName: "cloudy").withRenderingMode(.alwaysTemplate)
             weatherImageView.tintColor = .gray
         default:
             break
