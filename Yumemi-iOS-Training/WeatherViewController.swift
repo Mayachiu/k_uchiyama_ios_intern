@@ -9,7 +9,7 @@ import UIKit
 
 final class WeatherViewController: UIViewController {
     private let weatherManager = WeatherManager()
-    private var displayedWetherCondition: String = ""
+    private var displayedWeatherCondition: String = ""
 
     @IBOutlet private weak var weatherImageView: UIImageView!
 
@@ -23,7 +23,7 @@ final class WeatherViewController: UIViewController {
     }
 
     @IBAction private func reloadButtonPressed(_ sender: Any) {
-        weatherManager.requestWeatherForecast(displayedWetherCondition)
+        weatherManager.requestWeatherForecast(displayedWeatherCondition)
     }
 
     @IBAction private func closeButtonPressed(_ sender: Any) {
@@ -32,8 +32,8 @@ final class WeatherViewController: UIViewController {
 }
 
 extension WeatherViewController: WeatherDelegate {
-    func updateWeather(_ fetchedWetherCondition: String) {
-        switch fetchedWetherCondition {
+    func updateWeather(_ fetchedWeatherCondition: String) {
+        switch fetchedWeatherCondition {
         case "sunny":
             weatherImageView.image = UIImage(named: "sunny")?.withRenderingMode(.alwaysTemplate)
             weatherImageView.tintColor = .red
@@ -47,6 +47,6 @@ extension WeatherViewController: WeatherDelegate {
             weatherImageView.image = UIImage(systemName: "questionmark.circle")?.withRenderingMode(.alwaysTemplate)
             weatherImageView.tintColor = .black
         }
-        displayedWetherCondition = fetchedWetherCondition
+        displayedWeatherCondition = fetchedWeatherCondition
     }
 }
