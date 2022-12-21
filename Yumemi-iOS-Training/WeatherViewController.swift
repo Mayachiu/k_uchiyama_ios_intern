@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  WeatherViewController.swift
 //  Yumemi-iOS-Training
 //
 //  Created by 内山 和輝 on 2022/12/19.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ViewController: UIViewController {
+final class WeatherViewController: UIViewController {
     @IBOutlet private weak var weatherImageView: UIImageView!
 
     override func viewDidLoad() {
@@ -29,6 +29,10 @@ final class ViewController: UIViewController {
             weatherImageView.image = UIImage(systemName: "questionmark.circle")?.withRenderingMode(.alwaysTemplate)
             weatherImageView.tintColor = .black
         }
+    }
+
+    @IBAction private func closeButtonPressed(_ sender: Any) {
+        self.dismiss(animated: true)
     }
 }
 

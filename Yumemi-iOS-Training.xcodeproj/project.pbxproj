@@ -7,17 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D210EC3B295190310056CFDE /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D210EC3A295190310056CFDE /* APIClient.swift */; };
 		D28E358A294FF651000E3452 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E3589294FF651000E3452 /* AppDelegate.swift */; };
 		D28E358C294FF651000E3452 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E358B294FF651000E3452 /* SceneDelegate.swift */; };
-		D28E358E294FF651000E3452 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E358D294FF651000E3452 /* ViewController.swift */; };
-		D28E3591294FF651000E3452 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D28E358F294FF651000E3452 /* Main.storyboard */; };
+		D28E358E294FF651000E3452 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E358D294FF651000E3452 /* WeatherViewController.swift */; };
 		D28E3593294FF652000E3452 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D28E3592294FF652000E3452 /* Assets.xcassets */; };
 		D28E3596294FF652000E3452 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D28E3594294FF652000E3452 /* LaunchScreen.storyboard */; };
 		D28E35A1294FF652000E3452 /* Yumemi_iOS_TrainingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E35A0294FF652000E3452 /* Yumemi_iOS_TrainingTests.swift */; };
 		D28E35AB294FF652000E3452 /* Yumemi_iOS_TrainingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E35AA294FF652000E3452 /* Yumemi_iOS_TrainingUITests.swift */; };
 		D28E35AD294FF652000E3452 /* Yumemi_iOS_TrainingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E35AC294FF652000E3452 /* Yumemi_iOS_TrainingUITestsLaunchTests.swift */; };
 		D28E35BB294FFA85000E3452 /* YumemiWeather in Frameworks */ = {isa = PBXBuildFile; productRef = D28E35BA294FFA85000E3452 /* YumemiWeather */; };
-		D298863629505CE700B01D38 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D298863529505CE700B01D38 /* APIClient.swift */; };
+		D298863829506A0D00B01D38 /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D298863729506A0D00B01D38 /* NewViewController.swift */; };
+		D298863A295070A000B01D38 /* WeatherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2988639295070A000B01D38 /* WeatherViewController.xib */; };
+		D298863C29513F3100B01D38 /* NewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D298863B29513F3100B01D38 /* NewViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,11 +40,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D210EC3A295190310056CFDE /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		D28E3586294FF651000E3452 /* Yumemi-iOS-Training.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yumemi-iOS-Training.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D28E3589294FF651000E3452 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D28E358B294FF651000E3452 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D28E358D294FF651000E3452 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D28E3590294FF651000E3452 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D28E358D294FF651000E3452 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		D28E3592294FF652000E3452 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D28E3595294FF652000E3452 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D28E3597294FF652000E3452 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,7 +53,9 @@
 		D28E35A6294FF652000E3452 /* Yumemi-iOS-TrainingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Yumemi-iOS-TrainingUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D28E35AA294FF652000E3452 /* Yumemi_iOS_TrainingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yumemi_iOS_TrainingUITests.swift; sourceTree = "<group>"; };
 		D28E35AC294FF652000E3452 /* Yumemi_iOS_TrainingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yumemi_iOS_TrainingUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		D298863529505CE700B01D38 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		D298863729506A0D00B01D38 /* NewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
+		D2988639295070A000B01D38 /* WeatherViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherViewController.xib; sourceTree = "<group>"; };
+		D298863B29513F3100B01D38 /* NewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,9 +109,11 @@
 			children = (
 				D28E3589294FF651000E3452 /* AppDelegate.swift */,
 				D28E358B294FF651000E3452 /* SceneDelegate.swift */,
-				D28E358D294FF651000E3452 /* ViewController.swift */,
-				D298863529505CE700B01D38 /* APIClient.swift */,
-				D28E358F294FF651000E3452 /* Main.storyboard */,
+				D210EC3A295190310056CFDE /* APIClient.swift */,
+				D28E358D294FF651000E3452 /* WeatherViewController.swift */,
+				D2988639295070A000B01D38 /* WeatherViewController.xib */,
+				D298863729506A0D00B01D38 /* NewViewController.swift */,
+				D298863B29513F3100B01D38 /* NewViewController.xib */,
 				D28E3592294FF652000E3452 /* Assets.xcassets */,
 				D28E3594294FF652000E3452 /* LaunchScreen.storyboard */,
 				D28E3597294FF652000E3452 /* Info.plist */,
@@ -243,8 +249,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D28E3596294FF652000E3452 /* LaunchScreen.storyboard in Resources */,
+				D298863C29513F3100B01D38 /* NewViewController.xib in Resources */,
 				D28E3593294FF652000E3452 /* Assets.xcassets in Resources */,
-				D28E3591294FF651000E3452 /* Main.storyboard in Resources */,
+				D298863A295070A000B01D38 /* WeatherViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,10 +276,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D28E358E294FF651000E3452 /* ViewController.swift in Sources */,
+				D28E358E294FF651000E3452 /* WeatherViewController.swift in Sources */,
 				D28E358A294FF651000E3452 /* AppDelegate.swift in Sources */,
 				D28E358C294FF651000E3452 /* SceneDelegate.swift in Sources */,
-				D298863629505CE700B01D38 /* APIClient.swift in Sources */,
+				D210EC3B295190310056CFDE /* APIClient.swift in Sources */,
+				D298863829506A0D00B01D38 /* NewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,14 +317,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D28E358F294FF651000E3452 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D28E3590294FF651000E3452 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D28E3594294FF652000E3452 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -454,7 +454,6 @@
 				INFOPLIST_FILE = "Yumemi-iOS-Training/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -485,7 +484,6 @@
 				INFOPLIST_FILE = "Yumemi-iOS-Training/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				LD_RUNPATH_SEARCH_PATHS = (
