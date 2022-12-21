@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol WeatherDelegate: NSObjectProtocol {
+protocol WeatherDelegate: AnyObject {
     func updateWeather(_ fetchedWetherCondition: String)
 }
