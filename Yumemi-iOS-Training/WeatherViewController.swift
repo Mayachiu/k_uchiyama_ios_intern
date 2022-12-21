@@ -43,8 +43,20 @@ extension WeatherViewController: WeatherDelegate {
             weatherImageView.image = UIImage(named: "cloudy")?.withRenderingMode(.alwaysTemplate)
             weatherImageView.tintColor = .gray
         default:
-            weatherImageView.image = UIImage(systemName: "questionmark.circle")?.withRenderingMode(.alwaysTemplate)
-            weatherImageView.tintColor = .black
+            break
         }
+    }
+
+    func showNoWeatherResult(_ fetchedWetherCondition: String) {
+        weatherImageView.image = UIImage(systemName: "questionmark.circle")?.withRenderingMode(.alwaysTemplate)
+        weatherImageView.tintColor = .black
+        displayedWetherCondition = fetchedWetherCondition
+    }
+
+    func showNoWeatherAlert() {
+        let noWeatherAlert = UIAlertController(title: "天気を読み込めませんでした", message: nil, preferredStyle: .actionSheet)
+        let closeAction = UIAlertAction(title: "閉じる", style: .default)
+        noWeatherAlert.addAction(closeAction)
+        present(noWeatherAlert, animated: true, completion: nil)
     }
 }
