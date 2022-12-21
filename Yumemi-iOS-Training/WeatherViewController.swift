@@ -9,7 +9,6 @@ import UIKit
 
 final class WeatherViewController: UIViewController {
     private let weatherManager = WeatherManager()
-    private var displayedWeatherCondition: String = ""
 
     @IBOutlet private weak var weatherImageView: UIImageView!
 
@@ -47,6 +46,5 @@ extension WeatherViewController: WeatherDelegate {
             weatherImageView.image = UIImage(systemName: "questionmark.circle")?.withRenderingMode(.alwaysTemplate)
             weatherImageView.tintColor = .black
         }
-        displayedWeatherCondition = fetchedWeatherCondition
     }
 }
