@@ -10,11 +10,8 @@ import Foundation
 final class WeatherManager {
     weak var delegate: WeatherDelegate? = nil
 
-    func requestWeatherForecast(_ displayedWeatherCondition: String){
-        let fetchedWeatherCondition: String = APIClient.fetchWeatherCondition()
-
-        if displayedWeatherCondition != fetchedWeatherCondition {
-            self.delegate?.updateWeather(fetchedWeatherCondition)
-        }
+    func requestWeatherForecast() {
+        let fetchedWeatherCondition = APIClient.fetchWeatherCondition()
+        self.delegate?.updateWeather(fetchedWeatherCondition)
     }
 }

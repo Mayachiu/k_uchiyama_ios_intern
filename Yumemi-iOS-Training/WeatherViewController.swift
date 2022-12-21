@@ -23,7 +23,7 @@ final class WeatherViewController: UIViewController {
     }
 
     @IBAction private func reloadButtonPressed(_ sender: Any) {
-        weatherManager.requestWeatherForecast(displayedWeatherCondition)
+        weatherManager.requestWeatherForecast()
     }
 
     @IBAction private func closeButtonPressed(_ sender: Any) {
