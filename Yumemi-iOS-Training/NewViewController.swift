@@ -14,14 +14,11 @@ final class NewViewController: UIViewController {
         view.backgroundColor = .green
     }
 
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         transitionToWeatherViewController()
     }
 
-    override func viewDidLayoutSubviews() {
-        transitionToWeatherViewController()
-    }
-    
     private func transitionToWeatherViewController() {
         let weatherViewController = WeatherViewController()
         weatherViewController.modalPresentationStyle = .fullScreen
