@@ -11,7 +11,16 @@ final class WeatherManager {
     weak var delegate: WeatherDelegate? = nil
 
     func requestWeatherForecast() {
-        let fetchedWeatherCondition = APIClient.fetchWeatherCondition()
-        self.delegate?.updateWeather(fetchedWeatherCondition)
+        APIClient.fetchWeatherCondition(completion: {[weak self] result in
+            guard let self = self else { return }
+
+            switch result {
+            case .success(let weatherResult):
+                let fetchedWetherCondition = weatherResult
+                self.delegate?.updateWeather(fetchedWetherCondition)
+            case .failure(let error):
+                print(error)
+            }
+        })
     }
 }
