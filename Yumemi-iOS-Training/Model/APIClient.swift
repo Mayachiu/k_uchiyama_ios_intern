@@ -23,7 +23,6 @@ enum APIClient {
             let result = try YumemiWeather.fetchWeather(jsonString)
             do {
                 let response: Response = try JSONDecoder().decode(Response.self, from: result.data(using: .utf8)!)
-                print(response)
                 completion(.success(response))
             } catch {
                 completion(.failure(.invalidParameterError))
