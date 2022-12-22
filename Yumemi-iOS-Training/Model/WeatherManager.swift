@@ -13,14 +13,14 @@ final class WeatherManager {
     func requestWeatherForecast() {
         APIClient.fetchWeatherCondition(completion: {[weak self] result in
             guard let self = self else { return }
-            var fetchedWetherCondition = ""
+            var fetchedWeatherCondition = ""
 
             switch result {
             case .success(let weatherResult):
-                fetchedWetherCondition = weatherResult
-                self.delegate?.updateWeather(fetchedWetherCondition)
+                fetchedWeatherCondition = weatherResult
+                self.delegate?.updateWeather(fetchedWeatherCondition)
             case .failure(let error):
-                self.delegate?.showNoWeatherResult(fetchedWetherCondition)
+                self.delegate?.showNoWeatherResult(fetchedWeatherCondition)
                 self.delegate?.showNoWeatherAlert()
                 print(error)
             }

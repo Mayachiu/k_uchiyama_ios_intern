@@ -47,7 +47,7 @@ extension WeatherViewController: WeatherDelegate {
         }
     }
 
-    func showNoWeatherResult(_ fetchedWetherCondition: String) {
+    func showNoWeatherResult(_ fetchedWeatherCondition: String) {
         weatherImageView.image = UIImage(systemName: "questionmark.circle")?.withRenderingMode(.alwaysTemplate)
         weatherImageView.tintColor = .black
     }

@@ -8,7 +8,7 @@
 import Foundation
 
 protocol WeatherDelegate: AnyObject {
-    func updateWeather(_ fetchedWetherCondition: String)
-    func showNoWeatherResult(_ fetchedWetherCondition: String)
+    func updateWeather(_ fetchedWeatherCondition: String)
+    func showNoWeatherResult(_ fetchedWeatherCondition: String)
     func showNoWeatherAlert()
 }
