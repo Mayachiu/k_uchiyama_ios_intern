@@ -34,17 +34,28 @@ extension WeatherViewController: WeatherDelegate {
     func updateWeather(_ fetchedWeatherCondition: String) {
         switch fetchedWeatherCondition {
         case "sunny":
-            weatherImageView.image = UIImage(named: "sunny")?.withRenderingMode(.alwaysTemplate)
+            weatherImageView.image = #imageLiteral(resourceName: "sunny").withRenderingMode(.alwaysTemplate)
             weatherImageView.tintColor = .red
         case "rainy":
-            weatherImageView.image = UIImage(named: "rainy")?.withRenderingMode(.alwaysTemplate)
+                        weatherImageView.image = #imageLiteral(resourceName: "rainy").withRenderingMode(.alwaysTemplate)
             weatherImageView.tintColor = .blue
         case "cloudy":
-            weatherImageView.image = UIImage(named: "cloudy")?.withRenderingMode(.alwaysTemplate)
+                        weatherImageView.image = #imageLiteral(resourceName: "cloudy").withRenderingMode(.alwaysTemplate)
             weatherImageView.tintColor = .gray
         default:
-            weatherImageView.image = UIImage(systemName: "questionmark.circle")?.withRenderingMode(.alwaysTemplate)
-            weatherImageView.tintColor = .black
+            break
         }
+    }
+
+    func showNoWeatherResult(_ fetchedWetherCondition: String) {
+        weatherImageView.image = UIImage(systemName: "questionmark.circle")?.withRenderingMode(.alwaysTemplate)
+        weatherImageView.tintColor = .black
+    }
+
+    func showNoWeatherAlert() {
+        let noWeatherAlert = UIAlertController(title: "天気を読み込めませんでした", message: nil, preferredStyle: .actionSheet)
+        let closeAction = UIAlertAction(title: "閉じる", style: .default)
+        noWeatherAlert.addAction(closeAction)
+        present(noWeatherAlert, animated: true, completion: nil)
     }
 }

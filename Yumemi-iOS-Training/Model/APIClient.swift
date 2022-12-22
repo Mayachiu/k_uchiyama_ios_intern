@@ -9,7 +9,12 @@ import Foundation
 import YumemiWeather
 
 enum APIClient {
-    static func fetchWeatherCondition() -> String {
-        YumemiWeather.fetchWeatherCondition()
+    static func fetchWeatherCondition(completion: @escaping (Result<String,  YumemiWeatherError>) -> Void) {
+        do {
+            let result = try YumemiWeather.fetchWeatherCondition(at: "tokyo")
+            completion(.success(result))
+        } catch {
+            completion(.failure(.unknownError))
+        }
     }
 }
