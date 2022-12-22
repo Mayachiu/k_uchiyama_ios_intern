@@ -25,7 +25,6 @@ final class WeatherManager {
                 self.delegate?.updateWeather(fetchedWeatherCondition, fetchedMinTemperature, fetchedMaxTemperature)
             case .failure(let error):
                 self.delegate?.showNoWeatherResult(fetchedWeatherCondition)
-                self.delegate?.showNoWeatherAlert()
                 print(error)
             }
         })

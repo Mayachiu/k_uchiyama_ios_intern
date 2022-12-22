@@ -30,6 +30,13 @@ final class WeatherViewController: UIViewController {
     @IBAction private func closeButtonPressed(_ sender: Any) {
         self.dismiss(animated: true)
     }
+
+    internal func showNoWeatherAlert() {
+        let noWeatherAlert = UIAlertController(title: "天気を読み込めませんでした", message: nil, preferredStyle: .actionSheet)
+        let closeAction = UIAlertAction(title: "閉じる", style: .default)
+        noWeatherAlert.addAction(closeAction)
+        present(noWeatherAlert, animated: true, completion: nil)
+    }
 }
 
 extension WeatherViewController: WeatherDelegate {
@@ -56,12 +63,7 @@ extension WeatherViewController: WeatherDelegate {
         weatherImageView.tintColor = .black
         minTemperatureLabel.text = "-"
         maxTemperatureLabel.text = "-"
-    }
 
-    func showNoWeatherAlert() {
-        let noWeatherAlert = UIAlertController(title: "天気を読み込めませんでした", message: nil, preferredStyle: .actionSheet)
-        let closeAction = UIAlertAction(title: "閉じる", style: .default)
-        noWeatherAlert.addAction(closeAction)
-        present(noWeatherAlert, animated: true, completion: nil)
+        showNoWeatherAlert()
     }
 }
