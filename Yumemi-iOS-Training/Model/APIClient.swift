@@ -10,12 +10,14 @@ import YumemiWeather
 
 enum APIClient {
     static func fetchWeatherCondition(completion: @escaping (Result<Response,  YumemiWeatherError>) -> Void) {
-        let jsonString = """
-        {
-            "area": "tokyo",
-            "date": "2020-04-01T12:00:00+09:00"
+        let requestedQueries = Request(area: "tokyo", date: "2020-04-01T12:00:00+09:00")
+
+        guard let jsonValue = try? JSONEncoder().encode(requestedQueries) else {
+            completion(.failure(.invalidParameterError))
+            return
         }
-        """
+
+        let jsonString = String(data: jsonValue, encoding: .utf8)!
 
         do {
             let result = try YumemiWeather.fetchWeather(jsonString)
