@@ -14,11 +14,15 @@ final class WeatherManager {
         APIClient.fetchWeatherCondition(completion: {[weak self] result in
             guard let self = self else { return }
             var fetchedWeatherCondition = ""
+            var fetchedMinTemperature = 0
+            var fetchedMaxTemperature = 0
 
             switch result {
             case .success(let weatherResult):
                 fetchedWeatherCondition = weatherResult.weatherCondition
-                self.delegate?.updateWeather(fetchedWeatherCondition)
+                fetchedMinTemperature = weatherResult.minTemperature
+                fetchedMaxTemperature = weatherResult.maxTemperature
+                self.delegate?.updateWeather(fetchedWeatherCondition, fetchedMinTemperature, fetchedMaxTemperature)
             case .failure(let error):
                 self.delegate?.showNoWeatherResult(fetchedWeatherCondition)
                 self.delegate?.showNoWeatherAlert()

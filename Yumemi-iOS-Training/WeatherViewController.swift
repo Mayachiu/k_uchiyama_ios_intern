@@ -11,6 +11,8 @@ final class WeatherViewController: UIViewController {
     private let weatherManager = WeatherManager()
 
     @IBOutlet private weak var weatherImageView: UIImageView!
+    @IBOutlet private weak var minTemperatureLabel: UILabel!
+    @IBOutlet private weak var maxTemperatureLabel: UILabel!
 
     deinit {
             print("class：\(String(describing: type(of: self)))")
@@ -31,7 +33,7 @@ final class WeatherViewController: UIViewController {
 }
 
 extension WeatherViewController: WeatherDelegate {
-    func updateWeather(_ fetchedWeatherCondition: String) {
+    func updateWeather(_ fetchedWeatherCondition: String, _ fetchedMinTemperature: Int, _ fetchedMaxTemperature: Int) {
         switch fetchedWeatherCondition {
         case "sunny":
             weatherImageView.image = #imageLiteral(resourceName: "sunny").withRenderingMode(.alwaysTemplate)
@@ -45,11 +47,15 @@ extension WeatherViewController: WeatherDelegate {
         default:
             break
         }
+        minTemperatureLabel.text = String(fetchedMinTemperature)
+        maxTemperatureLabel.text = String(fetchedMaxTemperature)
     }
 
     func showNoWeatherResult(_ fetchedWeatherCondition: String) {
         weatherImageView.image = UIImage(systemName: "questionmark.circle")?.withRenderingMode(.alwaysTemplate)
         weatherImageView.tintColor = .black
+        minTemperatureLabel.text = "-"
+        maxTemperatureLabel.text = "-"
     }
 
     func showNoWeatherAlert() {
