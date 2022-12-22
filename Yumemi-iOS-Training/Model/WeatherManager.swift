@@ -17,7 +17,7 @@ final class WeatherManager {
 
             switch result {
             case .success(let weatherResult):
-                fetchedWeatherCondition = weatherResult
+                fetchedWeatherCondition = weatherResult.weatherCondition
                 self.delegate?.updateWeather(fetchedWeatherCondition)
             case .failure(let error):
                 self.delegate?.showNoWeatherResult(fetchedWeatherCondition)
