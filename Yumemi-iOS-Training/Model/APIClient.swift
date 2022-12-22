@@ -17,12 +17,15 @@ enum APIClient {
             return
         }
 
-        let jsonString = String(data: jsonValue, encoding: .utf8)!
+        guard let jsonString = String(data: jsonValue, encoding: .utf8) else { return }
 
         do {
             let result = try YumemiWeather.fetchWeather(jsonString)
+
+            guard let data = result.data(using: .utf8) else { return }
+
             do {
-                let response: Response = try JSONDecoder().decode(Response.self, from: result.data(using: .utf8)!)
+                let response: Response = try JSONDecoder().decode(Response.self, from: data)
                 completion(.success(response))
             } catch {
                 completion(.failure(.invalidParameterError))
