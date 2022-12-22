@@ -20,6 +20,8 @@
 		D298863829506A0D00B01D38 /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D298863729506A0D00B01D38 /* NewViewController.swift */; };
 		D298863A295070A000B01D38 /* WeatherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2988639295070A000B01D38 /* WeatherViewController.xib */; };
 		D298863C29513F3100B01D38 /* NewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D298863B29513F3100B01D38 /* NewViewController.xib */; };
+		D2D5FFF82951999C00B40F11 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D5FFF72951999C00B40F11 /* WeatherManager.swift */; };
+		D2D5FFFA2951B8DA00B40F11 /* WeatherDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D5FFF92951B8DA00B40F11 /* WeatherDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		D298863729506A0D00B01D38 /* NewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
 		D2988639295070A000B01D38 /* WeatherViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherViewController.xib; sourceTree = "<group>"; };
 		D298863B29513F3100B01D38 /* NewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewViewController.xib; sourceTree = "<group>"; };
+		D2D5FFF72951999C00B40F11 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
+		D2D5FFF92951B8DA00B40F11 /* WeatherDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,11 +113,8 @@
 			children = (
 				D28E3589294FF651000E3452 /* AppDelegate.swift */,
 				D28E358B294FF651000E3452 /* SceneDelegate.swift */,
-				D210EC3A295190310056CFDE /* APIClient.swift */,
-				D28E358D294FF651000E3452 /* WeatherViewController.swift */,
-				D2988639295070A000B01D38 /* WeatherViewController.xib */,
-				D298863729506A0D00B01D38 /* NewViewController.swift */,
-				D298863B29513F3100B01D38 /* NewViewController.xib */,
+				D2D5FFFD2951BA7900B40F11 /* Model */,
+				D2D5FFFE2951BA8600B40F11 /* ViewController */,
 				D28E3592294FF652000E3452 /* Assets.xcassets */,
 				D28E3594294FF652000E3452 /* LaunchScreen.storyboard */,
 				D28E3597294FF652000E3452 /* Info.plist */,
@@ -136,6 +137,27 @@
 				D28E35AC294FF652000E3452 /* Yumemi_iOS_TrainingUITestsLaunchTests.swift */,
 			);
 			path = "Yumemi-iOS-TrainingUITests";
+			sourceTree = "<group>";
+		};
+		D2D5FFFD2951BA7900B40F11 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D210EC3A295190310056CFDE /* APIClient.swift */,
+				D2D5FFF72951999C00B40F11 /* WeatherManager.swift */,
+				D2D5FFF92951B8DA00B40F11 /* WeatherDelegate.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D2D5FFFE2951BA8600B40F11 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D28E358D294FF651000E3452 /* WeatherViewController.swift */,
+				D2988639295070A000B01D38 /* WeatherViewController.xib */,
+				D298863729506A0D00B01D38 /* NewViewController.swift */,
+				D298863B29513F3100B01D38 /* NewViewController.xib */,
+			);
+			name = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,11 +298,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2D5FFF82951999C00B40F11 /* WeatherManager.swift in Sources */,
 				D28E358E294FF651000E3452 /* WeatherViewController.swift in Sources */,
 				D28E358A294FF651000E3452 /* AppDelegate.swift in Sources */,
 				D28E358C294FF651000E3452 /* SceneDelegate.swift in Sources */,
 				D210EC3B295190310056CFDE /* APIClient.swift in Sources */,
 				D298863829506A0D00B01D38 /* NewViewController.swift in Sources */,
+				D2D5FFFA2951B8DA00B40F11 /* WeatherDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
