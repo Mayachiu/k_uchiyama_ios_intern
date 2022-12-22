@@ -50,7 +50,6 @@ extension WeatherViewController: WeatherDelegate {
     func showNoWeatherResult(_ fetchedWetherCondition: String) {
         weatherImageView.image = UIImage(systemName: "questionmark.circle")?.withRenderingMode(.alwaysTemplate)
         weatherImageView.tintColor = .black
-        displayedWetherCondition = fetchedWetherCondition
     }
 
     func showNoWeatherAlert() {
