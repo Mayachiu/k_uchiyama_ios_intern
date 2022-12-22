@@ -39,10 +39,10 @@ extension WeatherViewController: WeatherDelegate {
             weatherImageView.image = #imageLiteral(resourceName: "sunny").withRenderingMode(.alwaysTemplate)
             weatherImageView.tintColor = .red
         case "rainy":
-                        weatherImageView.image = #imageLiteral(resourceName: "rainy").withRenderingMode(.alwaysTemplate)
+            weatherImageView.image = #imageLiteral(resourceName: "rainy").withRenderingMode(.alwaysTemplate)
             weatherImageView.tintColor = .blue
         case "cloudy":
-                        weatherImageView.image = #imageLiteral(resourceName: "cloudy").withRenderingMode(.alwaysTemplate)
+            weatherImageView.image = #imageLiteral(resourceName: "cloudy").withRenderingMode(.alwaysTemplate)
             weatherImageView.tintColor = .gray
         default:
             break
