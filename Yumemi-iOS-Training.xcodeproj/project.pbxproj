@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D210EC3B295190310056CFDE /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D210EC3A295190310056CFDE /* APIClient.swift */; };
+		D26AE53C29556F2000B3C870 /* FetchWeatherError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26AE53B29556F2000B3C870 /* FetchWeatherError.swift */; };
 		D28E358A294FF651000E3452 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E3589294FF651000E3452 /* AppDelegate.swift */; };
 		D28E358C294FF651000E3452 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E358B294FF651000E3452 /* SceneDelegate.swift */; };
 		D28E358E294FF651000E3452 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E358D294FF651000E3452 /* WeatherViewController.swift */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		D210EC3A295190310056CFDE /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		D26AE53B29556F2000B3C870 /* FetchWeatherError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchWeatherError.swift; sourceTree = "<group>"; };
 		D28E3586294FF651000E3452 /* Yumemi-iOS-Training.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yumemi-iOS-Training.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D28E3589294FF651000E3452 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D28E358B294FF651000E3452 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,9 +147,10 @@
 			isa = PBXGroup;
 			children = (
 				D210EC3A295190310056CFDE /* APIClient.swift */,
-				D2AF94132954234600DED89B /* YumemiWeatherEntity.swift */,
 				D2D5FFF72951999C00B40F11 /* WeatherManager.swift */,
 				D2D5FFF92951B8DA00B40F11 /* WeatherDelegate.swift */,
+				D2AF94132954234600DED89B /* YumemiWeatherEntity.swift */,
+				D26AE53B29556F2000B3C870 /* FetchWeatherError.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				D298863829506A0D00B01D38 /* NewViewController.swift in Sources */,
 				D2D5FFFA2951B8DA00B40F11 /* WeatherDelegate.swift in Sources */,
 				D2AF94142954234600DED89B /* YumemiWeatherEntity.swift in Sources */,
+				D26AE53C29556F2000B3C870 /* FetchWeatherError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
