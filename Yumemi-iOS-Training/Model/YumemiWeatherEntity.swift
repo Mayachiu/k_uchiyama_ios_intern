@@ -9,14 +9,14 @@ import Foundation
 
 struct Request: Codable {
     let area: String
-    let date: String
+    let date: Date
 }
 
 struct Response: Codable {
     let weatherCondition: String
     let maxTemperature: Int
     let minTemperature: Int
-    let date: String
+    let date: Date
 
     enum CodingKeys: String, CodingKey {
         case weatherCondition = "weather_condition"

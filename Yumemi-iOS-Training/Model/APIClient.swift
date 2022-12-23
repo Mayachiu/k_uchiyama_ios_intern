@@ -10,8 +10,13 @@ import YumemiWeather
 
 enum APIClient {
     static func fetchWeather(completion: @escaping (Result<Response,  FetchWeatherError>) -> Void) {
-        let requestedQuery = Request(area: "tokyo", date: "2020-04-01T12:00:00+09:00")
-        guard let requestedData = try? JSONEncoder().encode(requestedQuery) else {
+        let encoder = JSONEncoder()
+        encoder.dateEncodingStrategy = .iso8601
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+
+        let requestedQuery = Request(area: "tokyo", date: Date())
+        guard let requestedData = try? encoder.encode(requestedQuery) else {
             completion(.failure(.failedEncoding))
             return
         }
@@ -26,7 +31,7 @@ enum APIClient {
                 return
             }
             do {
-                let response: Response = try JSONDecoder().decode(Response.self, from: fetchedJsonData)
+                let response: Response = try decoder.decode(Response.self, from: fetchedJsonData)
                 completion(.success(response))
             } catch {
                 completion(.failure(.failedDecoding))
