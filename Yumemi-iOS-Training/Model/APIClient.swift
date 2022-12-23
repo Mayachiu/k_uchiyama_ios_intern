@@ -14,6 +14,7 @@ enum APIClient {
         encoder.dateEncodingStrategy = .iso8601
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
 
         let requestedQuery = Request(area: "tokyo", date: Date())
         guard let requestedData = try? encoder.encode(requestedQuery) else {
