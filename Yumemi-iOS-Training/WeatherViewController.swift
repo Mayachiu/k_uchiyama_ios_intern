@@ -31,16 +31,16 @@ final class WeatherViewController: UIViewController {
         self.dismiss(animated: true)
     }
 
-    internal func showNoWeatherAlert() {
-        let noWeatherAlert = UIAlertController(title: "天気を読み込めませんでした", message: nil, preferredStyle: .actionSheet)
+    internal func showNoWeatherAlert(_ alertTitle: String) {
+        let noWeatherAlert = UIAlertController(title: alertTitle, message: nil, preferredStyle: .actionSheet)
         let closeAction = UIAlertAction(title: "閉じる", style: .default)
         noWeatherAlert.addAction(closeAction)
-        present(noWeatherAlert, animated: true, completion: nil)
+        present(noWeatherAlert, animated: true)
     }
 }
 
 extension WeatherViewController: WeatherDelegate {
-    func updateWeather(_ fetchedWeatherCondition: String, _ fetchedMinTemperature: Int, _ fetchedMaxTemperature: Int) {
+    func updateWeather(fetchedWeatherCondition: String, fetchedMinTemperature: Int, fetchedMaxTemperature: Int) {
         switch fetchedWeatherCondition {
         case "sunny":
             weatherImageView.image = #imageLiteral(resourceName: "sunny").withRenderingMode(.alwaysTemplate)
@@ -58,12 +58,12 @@ extension WeatherViewController: WeatherDelegate {
         maxTemperatureLabel.text = String(fetchedMaxTemperature)
     }
 
-    func showNoWeatherResult(_ fetchedWeatherCondition: String) {
+    func showNoWeatherResult(alertTitle: String) {
         weatherImageView.image = UIImage(systemName: "questionmark.circle")?.withRenderingMode(.alwaysTemplate)
         weatherImageView.tintColor = .black
         minTemperatureLabel.text = "-"
         maxTemperatureLabel.text = "-"
 
-        showNoWeatherAlert()
+        showNoWeatherAlert(alertTitle)
     }
 }

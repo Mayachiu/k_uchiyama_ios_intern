@@ -9,29 +9,58 @@ import Foundation
 import YumemiWeather
 
 enum APIClient {
-    static func fetchWeatherCondition(completion: @escaping (Result<Response,  YumemiWeatherError>) -> Void) {
-        let requestedQueries = Request(area: "tokyo", date: "2020-04-01T12:00:00+09:00")
-
-        guard let jsonValue = try? JSONEncoder().encode(requestedQueries) else {
-            completion(.failure(.invalidParameterError))
+    static func fetchWeather(completion: @escaping (Result<Response,  FetchWeatherError>) -> Void) {
+        let requestedQuery = Request(area: "tokyo", date: "2020-04-01T12:00:00+09:00")
+        guard let requestedData = try? JSONEncoder().encode(requestedQuery) else {
+            completion(.failure(.failedEncoding))
             return
         }
-
-        guard let jsonString = String(data: jsonValue, encoding: .utf8) else { return }
-
+        guard let jsonString = String(data: requestedData, encoding: .utf8) else {
+            completion(.failure(.failedConvertingDataToJson))
+            return
+        }
         do {
-            let result = try YumemiWeather.fetchWeather(jsonString)
-
-            guard let data = result.data(using: .utf8) else { return }
-
+            let fetchedJson = try YumemiWeather.fetchWeather(jsonString)
+            guard let fetchedJsonData = fetchedJson.data(using: .utf8) else {
+                completion(.failure(.failedConvertingJsonToData))
+                return
+            }
             do {
-                let response: Response = try JSONDecoder().decode(Response.self, from: data)
+                let response: Response = try JSONDecoder().decode(Response.self, from: fetchedJsonData)
                 completion(.success(response))
             } catch {
-                completion(.failure(.invalidParameterError))
+                completion(.failure(.failedDecoding))
             }
         } catch {
-            completion(.failure(.unknownError))
+            completion(.failure(.APIError(.unknownError)))
+        }
+    }
+}
+
+enum FetchWeatherError:  LocalizedError {
+    case APIError(YumemiWeatherError)
+    case failedConvertingDataToJson
+    case failedConvertingJsonToData
+    case failedEncoding
+    case failedDecoding
+
+    var localizedDescription: String {
+        switch self {
+        case .failedConvertingDataToJson:
+            return "データからJSONへの変換に失敗しました"
+        case .failedConvertingJsonToData:
+            return "JSONからデータへの変換に失敗しました"
+        case .failedEncoding:
+            return "エンコードに失敗しました"
+        case .failedDecoding:
+            return "デコードに失敗しました"
+        case .APIError(let error):
+            switch error {
+            case .invalidParameterError:
+                return "無効なパラメーターのエラーです"
+            case .unknownError:
+                return "不明なエラーが発生しました"
+            }
         }
     }
 }
