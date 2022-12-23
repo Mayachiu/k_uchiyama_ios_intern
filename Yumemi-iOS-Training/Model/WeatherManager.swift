@@ -20,7 +20,7 @@ final class WeatherManager {
                 let fetchedMaxTemperature = weatherResult.maxTemperature
                 self.delegate?.updateWeather(fetchedWeatherCondition: fetchedWeatherCondition, fetchedMinTemperature: fetchedMinTemperature, fetchedMaxTemperature: fetchedMaxTemperature)
             case .failure(let error):
-                self.delegate?.showNoWeatherResult(alertTitle: error.localizedDescription)
+                self.delegate?.failedTofetchWeatherData(alertTitle: error.localizedDescription)
             }
         })
     }

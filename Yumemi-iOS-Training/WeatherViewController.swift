@@ -31,7 +31,14 @@ final class WeatherViewController: UIViewController {
         self.dismiss(animated: true)
     }
 
-    internal func showNoWeatherAlert(_ alertTitle: String) {
+    internal func configureNoWeatherResult() {
+        weatherImageView.image = UIImage(systemName: "questionmark.circle")?.withRenderingMode(.alwaysTemplate)
+        weatherImageView.tintColor = .black
+        minTemperatureLabel.text = "-"
+        maxTemperatureLabel.text = "-"
+    }
+
+    internal func showNoWeatherAlert(alertTitle: String) {
         let noWeatherAlert = UIAlertController(title: alertTitle, message: nil, preferredStyle: .actionSheet)
         let closeAction = UIAlertAction(title: "閉じる", style: .default)
         noWeatherAlert.addAction(closeAction)
@@ -58,12 +65,8 @@ extension WeatherViewController: WeatherDelegate {
         maxTemperatureLabel.text = String(fetchedMaxTemperature)
     }
 
-    func showNoWeatherResult(alertTitle: String) {
-        weatherImageView.image = UIImage(systemName: "questionmark.circle")?.withRenderingMode(.alwaysTemplate)
-        weatherImageView.tintColor = .black
-        minTemperatureLabel.text = "-"
-        maxTemperatureLabel.text = "-"
-
-        showNoWeatherAlert(alertTitle)
+    func failedTofetchWeatherData(alertTitle: String) {
+        configureNoWeatherResult()
+        showNoWeatherAlert(alertTitle: alertTitle)
     }
 }
