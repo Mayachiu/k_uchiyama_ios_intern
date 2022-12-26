@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WeatherViewController" customModule="Yumemi_iOS_Training" customModuleProvider="target">
             <connections>
+                <outlet property="maxTemperatureLabel" destination="toX-aZ-7Mh" id="mef-qn-AAS"/>
+                <outlet property="minTemperatureLabel" destination="dvJ-GE-qQT" id="Q57-WR-fnb"/>
                 <outlet property="view" destination="iN0-l3-epB" id="j0o-s1-fht"/>
                 <outlet property="weatherImageView" destination="nvJ-85-t7L" id="Y8o-nc-hYc"/>
             </connections>
@@ -20,22 +22,20 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvJ-GE-qQT">
-                    <rect key="frame" x="98.333333333333343" y="524.33333333333337" width="98.333333333333343" height="21"/>
-                    <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvJ-GE-qQT">
+                    <rect key="frame" x="98.333333333333343" y="524.33333333333337" width="98.333333333333343" height="20.333333333333371"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" name="Blue"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="toX-aZ-7Mh">
-                    <rect key="frame" x="196.66666666666666" y="524.33333333333337" width="97.999999999999972" height="21"/>
-                    <color key="backgroundColor" name="Gray"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="toX-aZ-7Mh">
+                    <rect key="frame" x="196.66666666666666" y="524.33333333333337" width="97.999999999999972" height="20.333333333333371"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" name="Red"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XRE-S3-0gr">
-                    <rect key="frame" x="207" y="625.33333333333337" width="77" height="35"/>
+                    <rect key="frame" x="207" y="624.66666666666663" width="77" height="35"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Reload"/>
                     <connections>
@@ -49,7 +49,7 @@
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N2V-ur-bfH">
-                    <rect key="frame" x="114" y="625.33333333333337" width="67" height="35"/>
+                    <rect key="frame" x="114" y="624.66666666666663" width="67" height="35"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Close"/>
                     <connections>
@@ -81,15 +81,9 @@
         <namedColor name="Blue">
             <color red="0.20499999821186066" green="0.53700000047683716" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="Gray">
-            <color red="0.47900000214576721" green="0.48800000548362732" blue="0.52100002765655518" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="Red">
             <color red="1" green="0.210999995470047" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

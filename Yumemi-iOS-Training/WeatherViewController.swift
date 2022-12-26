@@ -11,6 +11,8 @@ final class WeatherViewController: UIViewController {
     private let weatherManager = WeatherManager()
 
     @IBOutlet private weak var weatherImageView: UIImageView!
+    @IBOutlet private weak var minTemperatureLabel: UILabel!
+    @IBOutlet private weak var maxTemperatureLabel: UILabel!
 
     deinit {
             print("class：\(String(describing: type(of: self)))")
@@ -28,34 +30,41 @@ final class WeatherViewController: UIViewController {
     @IBAction private func closeButtonPressed(_ sender: Any) {
         self.dismiss(animated: true)
     }
+
+    internal func configureNoWeatherResult() {
+        weatherImageView.image = Asset.noWeatherImage?.withRenderingMode(.alwaysTemplate)
+        weatherImageView.tintColor = Asset.noWeatherColor
+        minTemperatureLabel.text = "-"
+        maxTemperatureLabel.text = "-"
+    }
+
+    internal func showNoWeatherAlert(alertTitle: String) {
+        let noWeatherAlert = UIAlertController(title: alertTitle, message: nil, preferredStyle: .actionSheet)
+        let closeAction = UIAlertAction(title: "閉じる", style: .default)
+        noWeatherAlert.addAction(closeAction)
+        present(noWeatherAlert, animated: true)
+    }
 }
 
 extension WeatherViewController: WeatherDelegate {
-    func updateWeather(_ fetchedWeatherCondition: String) {
+    func updateWeather(fetchedWeatherCondition: WeatherCondition, fetchedMinTemperature: Int, fetchedMaxTemperature: Int) {
         switch fetchedWeatherCondition {
-        case "sunny":
-            weatherImageView.image = #imageLiteral(resourceName: "sunny").withRenderingMode(.alwaysTemplate)
-            weatherImageView.tintColor = .red
-        case "rainy":
-                        weatherImageView.image = #imageLiteral(resourceName: "rainy").withRenderingMode(.alwaysTemplate)
-            weatherImageView.tintColor = .blue
-        case "cloudy":
-                        weatherImageView.image = #imageLiteral(resourceName: "cloudy").withRenderingMode(.alwaysTemplate)
-            weatherImageView.tintColor = .gray
-        default:
-            break
+        case .sunny:
+            weatherImageView.image = Asset.sunnyImage.withRenderingMode(.alwaysTemplate)
+            weatherImageView.tintColor = Asset.sunnyColor
+        case .cloudy:
+            weatherImageView.image = Asset.cloudyImage.withRenderingMode(.alwaysTemplate)
+            weatherImageView.tintColor = Asset.cloudyColor
+        case .rainy:
+            weatherImageView.image = Asset.rainyImage.withRenderingMode(.alwaysTemplate)
+            weatherImageView.tintColor = Asset.rainyColor
         }
+        minTemperatureLabel.text = String(fetchedMinTemperature)
+        maxTemperatureLabel.text = String(fetchedMaxTemperature)
     }
 
-    func showNoWeatherResult(_ fetchedWetherCondition: String) {
-        weatherImageView.image = UIImage(systemName: "questionmark.circle")?.withRenderingMode(.alwaysTemplate)
-        weatherImageView.tintColor = .black
-    }
-
-    func showNoWeatherAlert() {
-        let noWeatherAlert = UIAlertController(title: "天気を読み込めませんでした", message: nil, preferredStyle: .actionSheet)
-        let closeAction = UIAlertAction(title: "閉じる", style: .default)
-        noWeatherAlert.addAction(closeAction)
-        present(noWeatherAlert, animated: true, completion: nil)
+    func failedTofetchWeatherData(alertTitle: String) {
+        configureNoWeatherResult()
+        showNoWeatherAlert(alertTitle: alertTitle)
     }
 }
