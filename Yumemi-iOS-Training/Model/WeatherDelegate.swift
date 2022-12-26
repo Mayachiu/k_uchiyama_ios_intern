@@ -8,6 +8,6 @@
 import Foundation
 
 protocol WeatherDelegate: AnyObject {
-    func updateWeather(fetchedWeatherCondition: String, fetchedMinTemperature: Int, fetchedMaxTemperature: Int)
+    func updateWeather(fetchedWeatherCondition: WeatherCondition, fetchedMinTemperature: Int, fetchedMaxTemperature: Int)
     func failedTofetchWeatherData(alertTitle: String)
 }

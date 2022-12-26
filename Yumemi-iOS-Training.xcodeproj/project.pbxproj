@@ -24,6 +24,8 @@
 		D2AF94142954234600DED89B /* YumemiWeatherEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AF94132954234600DED89B /* YumemiWeatherEntity.swift */; };
 		D2D5FFF82951999C00B40F11 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D5FFF72951999C00B40F11 /* WeatherManager.swift */; };
 		D2D5FFFA2951B8DA00B40F11 /* WeatherDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D5FFF92951B8DA00B40F11 /* WeatherDelegate.swift */; };
+		D2FE7994295929B500BF2ECF /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FE7993295929B500BF2ECF /* Asset.swift */; };
+		D2FE7996295929D500BF2ECF /* WeatherCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FE7995295929D500BF2ECF /* WeatherCondition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,8 @@
 		D2AF94132954234600DED89B /* YumemiWeatherEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YumemiWeatherEntity.swift; sourceTree = "<group>"; };
 		D2D5FFF72951999C00B40F11 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 		D2D5FFF92951B8DA00B40F11 /* WeatherDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDelegate.swift; sourceTree = "<group>"; };
+		D2FE7993295929B500BF2ECF /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
+		D2FE7995295929D500BF2ECF /* WeatherCondition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCondition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,7 @@
 				D28E358B294FF651000E3452 /* SceneDelegate.swift */,
 				D2D5FFFD2951BA7900B40F11 /* Model */,
 				D2D5FFFE2951BA8600B40F11 /* ViewController */,
+				D2FE7992295929A000BF2ECF /* Asset */,
 				D28E3592294FF652000E3452 /* Assets.xcassets */,
 				D28E3594294FF652000E3452 /* LaunchScreen.storyboard */,
 				D28E3597294FF652000E3452 /* Info.plist */,
@@ -151,6 +156,7 @@
 				D2D5FFF92951B8DA00B40F11 /* WeatherDelegate.swift */,
 				D2AF94132954234600DED89B /* YumemiWeatherEntity.swift */,
 				D26AE53B29556F2000B3C870 /* FetchWeatherError.swift */,
+				D2FE7995295929D500BF2ECF /* WeatherCondition.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -164,6 +170,14 @@
 				D298863B29513F3100B01D38 /* NewViewController.xib */,
 			);
 			name = ViewController;
+			sourceTree = "<group>";
+		};
+		D2FE7992295929A000BF2ECF /* Asset */ = {
+			isa = PBXGroup;
+			children = (
+				D2FE7993295929B500BF2ECF /* Asset.swift */,
+			);
+			path = Asset;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,6 +320,7 @@
 			files = (
 				D2D5FFF82951999C00B40F11 /* WeatherManager.swift in Sources */,
 				D28E358E294FF651000E3452 /* WeatherViewController.swift in Sources */,
+				D2FE7994295929B500BF2ECF /* Asset.swift in Sources */,
 				D28E358A294FF651000E3452 /* AppDelegate.swift in Sources */,
 				D28E358C294FF651000E3452 /* SceneDelegate.swift in Sources */,
 				D210EC3B295190310056CFDE /* APIClient.swift in Sources */,
@@ -313,6 +328,7 @@
 				D2D5FFFA2951B8DA00B40F11 /* WeatherDelegate.swift in Sources */,
 				D2AF94142954234600DED89B /* YumemiWeatherEntity.swift in Sources */,
 				D26AE53C29556F2000B3C870 /* FetchWeatherError.swift in Sources */,
+				D2FE7996295929D500BF2ECF /* WeatherCondition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

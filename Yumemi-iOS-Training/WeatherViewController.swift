@@ -32,8 +32,8 @@ final class WeatherViewController: UIViewController {
     }
 
     internal func configureNoWeatherResult() {
-        weatherImageView.image = UIImage(systemName: "questionmark.circle")?.withRenderingMode(.alwaysTemplate)
-        weatherImageView.tintColor = .black
+        weatherImageView.image = Asset.noWeatherImage?.withRenderingMode(.alwaysTemplate)
+        weatherImageView.tintColor = Asset.noWeatherColor
         minTemperatureLabel.text = "-"
         maxTemperatureLabel.text = "-"
     }
@@ -47,19 +47,17 @@ final class WeatherViewController: UIViewController {
 }
 
 extension WeatherViewController: WeatherDelegate {
-    func updateWeather(fetchedWeatherCondition: String, fetchedMinTemperature: Int, fetchedMaxTemperature: Int) {
+    func updateWeather(fetchedWeatherCondition: WeatherCondition, fetchedMinTemperature: Int, fetchedMaxTemperature: Int) {
         switch fetchedWeatherCondition {
-        case "sunny":
-            weatherImageView.image = #imageLiteral(resourceName: "sunny").withRenderingMode(.alwaysTemplate)
-            weatherImageView.tintColor = .red
-        case "rainy":
-            weatherImageView.image = #imageLiteral(resourceName: "rainy").withRenderingMode(.alwaysTemplate)
-            weatherImageView.tintColor = .blue
-        case "cloudy":
-            weatherImageView.image = #imageLiteral(resourceName: "cloudy").withRenderingMode(.alwaysTemplate)
-            weatherImageView.tintColor = .gray
-        default:
-            break
+        case .sunny:
+            weatherImageView.image = Asset.sunnyImage.withRenderingMode(.alwaysTemplate)
+            weatherImageView.tintColor = Asset.sunnyColor
+        case .cloudy:
+            weatherImageView.image = Asset.cloudyImage.withRenderingMode(.alwaysTemplate)
+            weatherImageView.tintColor = Asset.cloudyColor
+        case .rainy:
+            weatherImageView.image = Asset.rainyImage.withRenderingMode(.alwaysTemplate)
+            weatherImageView.tintColor = Asset.rainyColor
         }
         minTemperatureLabel.text = String(fetchedMinTemperature)
         maxTemperatureLabel.text = String(fetchedMaxTemperature)
