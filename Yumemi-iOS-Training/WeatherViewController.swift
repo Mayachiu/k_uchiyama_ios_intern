@@ -21,6 +21,12 @@ final class WeatherViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         weatherManager.delegate = self
+
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(foreground(notification:)),
+                                               name: UIApplication.willEnterForegroundNotification,
+                                               object: nil
+        )
     }
 
     @IBAction private func reloadButtonPressed(_ sender: Any) {
@@ -43,6 +49,10 @@ final class WeatherViewController: UIViewController {
         let closeAction = UIAlertAction(title: "閉じる", style: .default)
         noWeatherAlert.addAction(closeAction)
         present(noWeatherAlert, animated: true)
+    }
+
+    @objc private func foreground(notification: Notification) {
+        weatherManager.requestWeatherForecast()
     }
 }
 
